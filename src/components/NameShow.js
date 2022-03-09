@@ -49,7 +49,7 @@ class NameShow extends React.Component {
         } else if (event.key === ']') {
             if (this.state.currentName != '') {this.moveForward(this.state.currentName)}
         }
-      }
+    }
 
     updateName = (state, name) => {
         this.setState({
@@ -81,11 +81,6 @@ class NameShow extends React.Component {
         } else {generatedName = `${name_1} ${name_2}`}
 
         this.updateName(this.state, generatedName)
-
-        console.log(`Generated: ${generatedName}`)
-        console.log(`Current: ${this.state.currentName}`)
-        console.log(`List: ${this.state.generatedNames}`)
-
     }
 
     render() {
