@@ -42,9 +42,7 @@ class NameShow extends React.Component {
     }
 
     handleKeyPress = (event) => {
-        if (event.key === 'Spacebar') {
-            this.generateName()
-        } else if (event.key === '[') {
+        if (event.key === '[') {
             if (this.state.currentName != '') {this.moveBack(this.state.currentName)}
         } else if (event.key === ']') {
             if (this.state.currentName != '') {this.moveForward(this.state.currentName)}
@@ -85,12 +83,12 @@ class NameShow extends React.Component {
 
     render() {
         return(
-            <div onKeyPress={this.handleKeyPress}>
-                <div >
-                    <button className='btn btn-primary mt-4 mb-2'  onClick={this.handleClick}>New Name</button>
-                    <h1 className='mt-2'>Plum's new name is:</h1>
-                    <h2 className='font-weight-bold'>{this.state.currentName}</h2>
-                </div>
+            <div onKeyPress={this.handleKeyPress}><br></br>
+                
+                <h1 className='mt-2'>Plum's new name is:</h1>
+                <h2 className='font-weight-bold'>{this.state.currentName}</h2><br></br>
+                <button className='btn btn-primary mt-4 mb-2'  onClick={this.handleClick}>New Name</button>
+                
             </div>
         )
     }
