@@ -1,4 +1,5 @@
 import React from "react";
+import NameShow from "../components/NameShow";
 
 class NameContainer extends React.Component {
 
@@ -13,6 +14,7 @@ class NameContainer extends React.Component {
         return(
             <div>
                 <h1 className="navbar-light bg-light">Plumbus Name Generator</h1>
+                <NameShow rootNames={this.state.rootNames}/>
             </div>
         )
     }

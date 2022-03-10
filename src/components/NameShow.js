@@ -3,16 +3,18 @@ import React from 'react'
 class NameShow extends React.Component {
 
     state = {
-        rootNames: ['poop', 'poopy', 'turd', 'stinky', 'fuzz', 'Muffin', 'baby', 'butt', 'Little', 'nugget', 'Fuzzy',
-        'bumbus', 'plumbus', 'plumbusman', 'Pee-pee', 'snuggly', 'snoogly', 'man', 'slut', 'slutty', 'scoopy',
-        'scoop', 'smoochy', 'fart', 'farty', 'beebee', 'monkey', 'shmoopy', 'sweet', 'plum', 'snoogly', 'McSlut', 'butthole',
-        'fuzzyman', 'tiny', 'num-num', 'buddy', 'chunks', 'chunky', 'toasty', 'ass', 'scrumptious'],
+        // rootNames: ['poop', 'poopy', 'turd', 'stinky', 'fuzz', 'Muffin', 'baby', 'butt', 'Little', 'nugget', 'Fuzzy',
+        // 'bumbus', 'plumbus', 'plumbusman', 'Pee-pee', 'snuggly', 'snoogly', 'man', 'slut', 'slutty', 'scoopy',
+        // 'scoop', 'smoochy', 'fart', 'farty', 'beebee', 'monkey', 'shmoopy', 'sweet', 'plum', 'snoogly', 'McSlut', 'butthole',
+        // 'fuzzyman', 'tiny', 'num-num', 'buddy', 'chunks', 'chunky', 'toasty', 'ass', 'scrumptious'],
+        // rootNames: [this.props.rootNames],
         generatedNames: [],
         currentName: ''
     }
 
     componentDidMount() {
         this.generateName()
+        // console.log(this.props)
     }
 
     capitalizeFirstLetter(string) {
@@ -51,7 +53,7 @@ class NameShow extends React.Component {
 
     updateName = (state, name) => {
         this.setState({
-            rootNames: [...state.rootNames],
+            // rootNames: [...this.props.rootNames],
             generatedNames: [...state.generatedNames, name],
             currentName: name
         })
@@ -65,9 +67,9 @@ class NameShow extends React.Component {
         let long = Math.floor(Math.random()*10)
         let the = Math.floor(Math.random()*30)
 
-        let name_1 = this.capitalizeFirstLetter(`${this.state.rootNames[Math.floor(((Math.random()*this.state.rootNames.length)))]}`)
-        let name_2 = this.capitalizeFirstLetter(`${this.state.rootNames[Math.floor(((Math.random()*this.state.rootNames.length)))]}`)
-        let name_3 = this.capitalizeFirstLetter(`${this.state.rootNames[Math.floor(((Math.random()*this.state.rootNames.length)))]}`)
+        let name_1 = this.capitalizeFirstLetter(`${this.props.rootNames[Math.floor(((Math.random()*this.props.rootNames.length)))]}`)
+        let name_2 = this.capitalizeFirstLetter(`${this.props.rootNames[Math.floor(((Math.random()*this.props.rootNames.length)))]}`)
+        let name_3 = this.capitalizeFirstLetter(`${this.props.rootNames[Math.floor(((Math.random()*this.props.rootNames.length)))]}`)
 
 
         if (the == 0) {
